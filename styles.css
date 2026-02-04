@@ -1,0 +1,148 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0b0c10;
+  --fg: #eaf0f6;
+  --accent: #4f8cff;
+  --muted: #8a97a6;
+  --card: #14161c;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f7f9fc;
+    --fg: #0b1a33;
+    --accent: #2563eb;
+    --muted: #4b5563;
+    --card: #ffffff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  background: radial-gradient(1200px 800px at 80% -20%, color-mix(in oklab, var(--accent) 16%, transparent) 0, transparent 60%), var(--bg);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  line-height: 1.5;
+  padding: 24px 24px 28px;
+}
+
+header,
+main,
+footer {
+  width: min(720px, 100%);
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  border: 1px solid color-mix(in oklab, var(--fg) 8%, transparent);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px color-mix(in oklab, black 20%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+header h1 {
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  color: var(--fg);
+  text-decoration: none;
+  opacity: .9;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color .2s ease, opacity .2s ease;
+}
+
+header nav a:hover {
+  background: color-mix(in oklab, var(--fg) 8%, transparent);
+  opacity: 1;
+}
+
+main {
+  padding: 24px 28px;
+}
+
+h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.students {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.students li {
+  margin: 4px 0;
+}
+
+.actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+a.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 16px color-mix(in oklab, var(--accent) 35%, transparent);
+  transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+a.button:hover { transform: translateY(-1px); }
+
+a.button:active { transform: translateY(0); opacity: .9; }
+
+code {
+  background: color-mix(in oklab, var(--fg) 8%, transparent);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+footer {
+  padding: 14px 20px;
+  font-size: .9em;
+  color: var(--muted);
+  text-align: center;
+}
